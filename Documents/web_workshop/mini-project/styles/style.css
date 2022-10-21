@@ -1,0 +1,134 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 3s;
+}
+header {
+    background-color: grey;
+    height: 20vh;
+    align-items: center;
+}
+
+/* Social icons and links in header */
+ul {
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: space-between; */
+    gap: 10px;
+}
+li {
+    list-style: none;
+}
+h2 {
+    animation: cool 2s infinite;
+}
+/* setting background color of entire body to black */
+body {
+    background-color: black;
+}
+main {
+    display: flex;
+}
+
+.front, .back {
+    position: absolute;
+    top: 0; /*will let it start from top left*/
+    left: 0; /*will let it start from top left*/
+    backface-visibility: hidden; /*to see through an element*/
+    /* -webkit-backface-visibility: hidden;     */
+
+    
+}
+
+.front_back {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    /* display: flex;
+    flex-direction: column wrap; */
+    perspective: 1000px;
+    margin-left: auto;
+}
+
+.front {
+    z-index: 20; /*brings img to the front*/
+
+}
+
+.back {
+    background-color: aqua;
+    display: flex;
+    flex-flow: column wrap; /*shortcut for direction and wrap*/
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    border-radius: 20px;
+    z-index: 0;
+}
+.img1 {
+    max-width: 100%; /*sets the limit to 100%*/
+    border-radius: 20px;
+}
+
+.img2 {
+    max-width: 100%; /*sets the limit to 100%*/
+    border-radius: 20px;
+}
+
+.front:hover {
+    transform: rotateY(180deg);
+    transition: 3s;
+    transform-style: preserve-3d;
+    /* transition: infinite ease-in-out; */
+}
+
+.split_screen {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    /* gap: 50px;*/
+}
+.left {
+    display: grid;
+    background-color: aqua;
+    width: 700px;
+
+}
+.right {
+    background-color: red;
+    width: 700px;
+}
+.left:hover {
+    width: 75%;
+    transition: 3s;
+}
+.right:hover {
+    width: 75%;
+    transition: 3s;
+}
+
+footer {
+    background-color: grey;
+    height: 20vh;
+}
+
+
+
+@keyframes cool {
+    0% {
+        background-color: blueviolet;
+        width: 100%;
+        border-radius: 50%;
+    }
+
+    50% {
+        font-style: italic;
+
+    }
+    100% {
+        background-color: aqua;
+    }
+}
